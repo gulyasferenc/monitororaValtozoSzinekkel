@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by gulyasferenc (http://jsbin.com/bevubaz/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Óra_3+RND</title>
+<style id="jsbin-css">
+html, body {
+  height: 100%;
+}
+
+#clock {
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  position: relative;
+  top: 40%;
+  font-size: 48px;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div id="clock">22:23:24</div>
+Óra_3+RND
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+var x = Math.floor((Math.random() * 15) + 1);
+var y = Math.floor((Math.random() * 15) + 1);
+
+			if (x == 10){
+				x = "a";
+			} else if (x == 11){
+				x = "b";
+			} else if (x == 12){
+				x = "c";
+			} else if (x == 13){
+				x = "d";
+			} else if (x == 14){
+				x = "e";
+			} else if (x == 15){
+				x = "f";
+			}
+			if (y == 10){
+				y = "a";
+			} else if (y == 11){
+				y = "b";
+			} else if (y == 12){
+				y = "c";
+			} else if (y == 13){
+				y = "d";
+			} else if (y == 14){
+				y = "e";
+			} else if (y == 15){
+				y = "f";
+			}
+  
+  
+  var clockFace = hours + ':' + minutes + ':' + seconds;
+  var hexColor = '#' + hours + minutes + x + y;
+
+ 
+  
+  document.getElementById('clock').innerHTML = clockFace;
+  document.body.style.background = hexColor;
+
+  setTimeout(function() {
+    colorClock();
+  }, 1000);
+  
+}
+
+colorClock();
+</script>
+</body>
+</html>
